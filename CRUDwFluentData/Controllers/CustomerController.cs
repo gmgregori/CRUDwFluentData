@@ -19,9 +19,11 @@ namespace CRUDwFluentData.Controllers
         }
 
         // GET: api/Customer/5
-        public string Get(int id)
+        public dynamic Get(int id)
         {
-            return "value";
+            IDbContext Context = new DbContext().ConnectionStringName("Chinook", new SqlServerProvider());
+            dynamic customer = Context.Sql("SELECT * FROM Customer WHERE CustomerId = @0", id).QuerySingle<dynamic>();
+            return customer;
         }
 
         // POST: api/Customer

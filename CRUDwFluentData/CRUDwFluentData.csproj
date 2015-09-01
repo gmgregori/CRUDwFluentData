@@ -197,6 +197,7 @@
   <ItemGroup>
     <Content Include="AngularJs\app.js" />
     <Content Include="AngularJs\customerControllers.js" />
+    <Content Include="AngularJs\partials\CustomerDetails.html" />
     <Content Include="AngularJs\partials\CustomersList.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
