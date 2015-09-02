@@ -18,6 +18,10 @@
             when('/custAdd', {
                 templateUrl: 'AngularJs/partials/CustomerAdd.html',
                 controller: 'CustomerAddCtrl'
+            }).
+            when('/custUpdate/:id', {
+                templateUrl: 'AngularJs/partials/CustomerUpdate.html',
+                controller: 'CustomerUpdateCtrl'
             });
         }
     ]);

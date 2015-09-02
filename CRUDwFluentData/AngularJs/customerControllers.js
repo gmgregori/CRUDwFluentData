@@ -17,6 +17,10 @@
         $scope.deleteCustomer = function (custId) {
             $location.path('/custDelete/' + custId);
         }
+
+        $scope.updateCustomer = function (custId) {
+            $location.path('/custUpdate/' + custId);
+        }
     })
 
     .controller("CustomerDetailsCtrl", function ($scope, $http, $routeParams) {
@@ -66,6 +70,28 @@
             }).
             error(function (data, status, headers, config) {
                 console.log('CustomerAddCtrl error');
+            });
+        }
+    }).
+
+    controller("CustomerUpdateCtrl", function ($scope, $http, $routeParams, $location) {
+        $http.get('api/Customer', {
+            params: { id: $routeParams.id }
+        }).
+        success(function (data, status, headers, config) {
+            $scope.newCustomer = data;
+        }).
+        error(function (data, status, headers, config) {
+            console.log('CustomersUpdateCtrl error');
+        });
+
+        $scope.updateCustomer = function () {
+            $http.put('api/Customer', $scope.newCustomer).
+            success(function (data, status, headers, config) {
+                $location.path('/custDetails/' + data);
+            }).
+            error(function (data, status, headers, config) {
+                console.log('CustomerUpdateCtrl error');
             });
         }
     });

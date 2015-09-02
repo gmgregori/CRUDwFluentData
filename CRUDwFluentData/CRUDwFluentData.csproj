@@ -201,6 +201,7 @@
     <Content Include="AngularJs\partials\CustomerDelete.html" />
     <Content Include="AngularJs\partials\CustomerDetails.html" />
     <Content Include="AngularJs\partials\CustomersList.html" />
+    <Content Include="AngularJs\partials\CustomerUpdate.html" />
     <Content Include="AngularJs\partials\_custData.html" />
     <Content Include="AngularJs\partials\_custForm.html" />
     <Content Include="Content\bootstrap.css" />

@@ -47,8 +47,33 @@ namespace CRUDwFluentData.Controllers
         }
 
         // PUT: api/Customer/5
-        public void Put(int id, [FromBody]string value)
+        public int Put([FromBody] dynamic customer)
         {
+            IDbContext Context = new DbContext().ConnectionStringName("Chinook", new SqlServerProvider());
+
+            int rowsAffected = Context.Sql(@"UPDATE Customer SET 
+                                                    FirstName = @0, 
+                                                    LastName = @1, 
+                                                    Address = @2, 
+                                                    City = @3, 
+                                                    Country = @4,
+                                                    PostalCode = @5, 
+                                                    Phone = @6, 
+                                                    Email = @7
+                                                WHERE CustomerId = @8;")
+                                        .Parameters(
+                                            (string)customer.FirstName,
+                                            (string)customer.LastName,
+                                            (string)customer.Address,
+                                            (string)customer.City,
+                                            (string)customer.Country,
+                                            (string)customer.PostalCode,
+                                            (string)customer.Phone,
+                                            (string)customer.Email,
+                                            (int)customer.CustomerId)
+                                        .Execute();
+
+            return (int)customer.CustomerId;
         }
 
         // DELETE: api/Customer/5
