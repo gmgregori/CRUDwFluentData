@@ -14,6 +14,10 @@
             when('/custDelete/:id', {
                 templateUrl: 'AngularJs/partials/CustomerDelete.html',
                 controller: 'CustomerDeleteCtrl'
+            }).
+            when('/custAdd', {
+                templateUrl: 'AngularJs/partials/CustomerAdd.html',
+                controller: 'CustomerAddCtrl'
             });
         }
     ]);

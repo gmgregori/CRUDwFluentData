@@ -54,4 +54,18 @@
                 console.log('confirmDeletion error');
             });
         };
+    }).
+
+    controller("CustomerAddCtrl", function ($scope, $http, $location) {
+        $scope.newCustomer = {};
+
+        $scope.sendCustomer = function () {
+            $http.post('api/Customer', $scope.newCustomer).
+            success(function (data, status, headers, config) {
+                $location.path('/custDetails/' + data);
+            }).
+            error(function (data, status, headers, config) {
+                console.log('CustomerAddCtrl error');
+            });
+        }
     });

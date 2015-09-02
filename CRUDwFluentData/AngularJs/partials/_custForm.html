@@ -1,0 +1,35 @@
+﻿<div class="form-group" ng-class="myForm.firstName.$invalid ? 'has-error' : 'has-success'">
+    <label for="firstName">First Name*</label>
+    <input id="firstName" name="firstName" type="text" class="form-control"
+           required ng-model="newCustomer.FirstName" />
+</div>
+<div class="form-group" ng-class="myForm.lastName.$invalid ? 'has-error' : 'has-success'">
+    <label for="lastName">Last Name*</label>
+    <input id="lastName" name="lastName" type="text" class="form-control"
+           required ng-model="newCustomer.LastName" />
+</div>
+<div class="form-group">
+    <label for="address">Address</label>
+    <input id="address" type="text" class="form-control" ng-model="newCustomer.Address" />
+</div>
+<div class="form-group">
+    <label for="city">City</label>
+    <input id="city" type="text" class="form-control" ng-model="newCustomer.City" />
+</div>
+<div class="form-group">
+    <label for="country">Country</label>
+    <input id="country" type="text" class="form-control" ng-model="newCustomer.Country" />
+</div>
+<div class="form-group">
+    <label for="postalCode">Postal Code</label>
+    <input id="postalCode" type="text" class="form-control" ng-model="newCustomer.PostalCode" />
+</div>
+<div class="form-group">
+    <label for="phone">Phone</label>
+    <input id="phone" type="text" class="form-control" ng-model="newCustomer.Phone" />
+</div>
+<div class="form-group" ng-class="myForm.email.$invalid ? 'has-error' : 'has-success'">
+    <label for="email">Email*</label>
+    <input id="email" name="email" type="email" class="form-control"
+           required ng-model="newCustomer.Email" />
+</div>

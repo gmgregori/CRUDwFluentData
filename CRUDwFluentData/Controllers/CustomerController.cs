@@ -27,8 +27,23 @@ namespace CRUDwFluentData.Controllers
         }
 
         // POST: api/Customer
-        public void Post([FromBody]string value)
+        public int Post([FromBody] dynamic customer)
         {
+            IDbContext Context = new DbContext().ConnectionStringName("Chinook", new SqlServerProvider());
+            int customerId = Context.Sql(@"INSERT INTO Customer(FirstName, LastName, Address, City, Country,
+                                PostalCode, Phone, Email) VALUES(@0, @1, @2, @3, @4, @5, @6, @7);")
+                                .Parameters(
+                                    (string)customer.FirstName,
+                                    (string)customer.LastName,
+                                    (string)customer.Address,
+                                    (string)customer.City,
+                                    (string)customer.Country,
+                                    (string)customer.PostalCode,
+                                    (string)customer.Phone,
+                                    (string)customer.Email)
+                                .ExecuteReturnLastId<int>();
+
+            return customerId;
         }
 
         // PUT: api/Customer/5

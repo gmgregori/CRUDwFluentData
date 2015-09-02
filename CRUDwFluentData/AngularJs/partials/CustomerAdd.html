@@ -1,0 +1,13 @@
+﻿<h2>
+    Customers
+    <span class="pull-right">
+        <button class="btn btn-success" ng-disabled="myForm.$invalid" ng-click="sendCustomer()">
+            add customer
+        </button>
+        <a href="#/" class="btn btn-default">cancel</a>
+    </span>
+</h2>
+<h3>New Customer</h3>
+<form name="myForm" novalidate>
+    <ng-include src="'/AngularJs/partials/_custForm.html'"></ng-include>
+</form>
