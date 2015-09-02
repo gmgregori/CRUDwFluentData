@@ -39,6 +39,8 @@ namespace CRUDwFluentData.Controllers
         // DELETE: api/Customer/5
         public void Delete(int id)
         {
+            IDbContext Context = new DbContext().ConnectionStringName("Chinook", new SqlServerProvider());
+            int rowsAffected = Context.Sql("DELETE FROM Customer WHERE CustomerId = @0", id).Execute();
         }
     }
 }

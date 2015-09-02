@@ -9,6 +9,7 @@
                 <th>First Name</th>
                 <th>City</th>
                 <th>Country</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,11 @@
                 <td>{{customer.FirstName}}</td>
                 <td>{{customer.City}}</td>
                 <td>{{customer.Country}}</td>
+                <td>
+                    <button class="btn btn-warning btn-xs" ng-click="deleteCustomer(customer.CustomerId)">
+                        delete
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

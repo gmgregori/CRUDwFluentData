@@ -1,0 +1,11 @@
+﻿<h2>
+    Customers
+    <span class="pull-right">
+        <button class="btn btn-danger" ng-click="confirmDeletion(customer.CustomerId)">
+            confirm
+        </button>
+        <a href="#/" class="btn btn-default">cancel</a>
+    </span>
+</h2>
+<h3>Deletion of record id {{customer.CustomerId}}</h3>
+<div ng-include="'/AngularJs/partials/_custData.html'"></div>
